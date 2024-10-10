@@ -3,7 +3,7 @@ A quick git reference guide
 
 ### table of contents
 
-[!!! I don't care about the theory, bring me straight to the commands !!!](##commands)
+[***🚨 !!! I don't care about the theory, bring me straight to the commands !!! 🚨***](#commands)
 
 ## what is `git`
 
