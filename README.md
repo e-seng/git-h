@@ -46,7 +46,8 @@ all code starts as "working changes". this effectively means that
 
 `git init`
 
-- create a new local repository
+- create a new local repository in the current working directory
+- this will be named whatever the working directory is named
 
 `git status`
 
