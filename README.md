@@ -77,26 +77,26 @@ all changes, including new files, start as "working changes". this effectively
 means that `git` does not save the state of these changes, but will be able to
 detect that these changes exist within the repository.
 
-for brand new files, [`git status`](#gitstatus) will mark these files as
+for brand new files, [`git status`](#git-status) will mark these files as
 "untracked", as it would no sense of how the file has changed over time. as
 such, `git` has no idea what the initial state for any file would be, or even if
 the file is of importance to the repository, so it will continue to ignore
 untracked files until it is explicitly told to keep an eye on them
 
 any file with history tracked by `git` can be changed and
-[restored](#gitrestore). as such, this enables a sense of "experimentation"
+[restored](#git-restore). as such, this enables a sense of "experimentation"
 while working on the repository since any "bad changes" can be reverted entirely
 to a previous known and typically stable state.
 
 working files and changes can be "staged" when they are [added to the
-repository](#gitadd)
+repository](#git-add)
 
 ### staged changes
 
 I like to think of this stage as the "hat containing changes to track". this
 staging layer acts like place where you can set up what your next saved state is
 going to look like. it really, effectively, is a step _in preparation to_ commit
-the changes. through a mixture of [adding](#gitadd) and [restoring](#gitrestore)
+the changes. through a mixture of [adding](#git-add) and [restoring](#git-restore)
 staged changes, the set of changes you specifically wish to save (and create a
 strong commit message for :>) can be narrowed down by moving changes between the
 staged and working layers.
@@ -105,7 +105,7 @@ note that changes across multiple files can be staged to be committed at the
 same time, or a subset of the changes within a _single_ file can be staged.
 
 once the set of changes to save is determined then they can be [committed to the
-repository](#gitcommit) with an effective commit message
+repository](#git-commit) with an effective commit message
 
 ### committed changes
 
@@ -119,7 +119,7 @@ of the code base and see how the code has changed over time. `logs` can be read
 to obtain an overview of what each commit did, as long as the commit message is
 descriptive enough.
 
-changes committed on a branch can then be [merged](#gitmerge) with other
+changes committed on a branch can then be [merged](#git-merge) with other
 branches, to combine previous or collaborative work.
 
 - [ ] todo: remote branches
@@ -141,7 +141,7 @@ branches, to combine previous or collaborative work.
 - generally, this command is probably the most useful to see what needs to be
   updated
 
-##### `git checkout <BRANCH NAME>`
+##### `git checkout`
 
 - switches which branch you're working on
 - `-b <BRANCH NAME>` can be used to create a new branch with the specified name
@@ -157,7 +157,7 @@ git checkout -b fibonacci-func
 git checkout master
 ```
 
-`git add [path/to/FILE1 path/to/FILE2...]`
+##### `git add`
 
 - stage working files, either adding them to the repository for the first time
   or staging changes within those files
@@ -220,7 +220,7 @@ $ git commit -m "Add files to repository"
 - lists the branches that exist on the local repository
 - `-d <BRANCH NAME>` will delete an existing branch
 
-##### `git merge <BRANCH NAME>`
+##### `git merge`
 
 - merges the specified branch into the current branch
 - this may lead to _merge conflicts_ if the two branches has commit changes
