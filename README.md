@@ -144,7 +144,7 @@ local repository         |             git push      git pull
                          |         /                          \
                          |     git add                  git restore --staged
                          |       /                              \
-        working changes  | [new change or files made to the repository] --- git restore --- [changes are deleted] - X
+        working changes  | (new change or files made to the repository) --- git restore --- (changes are deleted) - X
                          |                 \
                          |            [add file name to .gitignore]
                          |                   \
