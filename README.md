@@ -140,6 +140,9 @@ branches, to combine previous or collaborative work.
   have unsaved changes
 - generally, this command is probably the most useful to see what needs to be
   updated
+- in most circumstances, this command really helps when trying to operate on the
+  repository, as it provides example commands to do, and gives details about the
+  state of the repository
 
 ##### `git checkout`
 
@@ -167,6 +170,64 @@ for example:
 ```sh
 $ git add README.md main.c
 ```
+
+##### `git restore`
+
+- restore changes made to a file to the last committed state of the file
+- specifying `--staged` will _unstage_ the files specified
+
+for example:
+
+```sh
+# undo recent saved changes made to README.md. will restore to the previous
+# committed state
+$ git restore README.md
+
+# unstage main.c if it should no longer be committed
+$ git restore --staged main.c
+```
+
+##### `git rm`
+
+- stages the specified files to be deleted from the repository
+- !!! note that this does not delete the history of the file !!!
+  - git will still keep track of the previous states of the file, but after
+    committing a deletion, that file is good as gone moving forward
+  - this is _not_ a solution to remove secrets from a repository
+
+for example:
+
+```sh
+$ git rm junkfile.ts anotherfile.ts
+```
+
+- this will _actually delete the file_ as well
+
+##### `git mv`
+
+- effectively stagesa specified file to be renamed to a specified name
+- can also move the file from its location within the repository
+
+for example:
+
+```sh
+# rename the file
+git mv wrong_name.c right_name.c
+
+# move the file out of a sub directory
+git mv baddir/foo.py ./foo.py
+```
+
+- equivalent to
+
+```sh
+mv baddir/mai.c ./main.c
+git rm baddir/mai.c
+git add ./main.c
+```
+
+- note that the previous states of the file will have its old name, so the
+  rename will only affect the file _moving forward_
 
 ##### `git commit`
 
@@ -234,9 +295,7 @@ for example:
 $ git merge main
 ```
 
-> dealing with merge/rebase conflicts
->
-> - [ ] TODO
+- prone to creating merge conflicts, see [handling merge/rebase conflicts](#handling-merge-rebase-conflicts)
 
 ### working with remote repositories
 
@@ -270,6 +329,7 @@ commands here typically affect the committed changes on the repository
     request"
 - it is ***fundamental*** that pushes are ***never*** made to the main/master
   branch
+- prone to creating merge conflicts, see [handling merge/rebase conflicts](#handling-merge-rebase-conflicts)
 
 for example:
 
@@ -281,3 +341,9 @@ git push -u origin fibonacci-func
 # moving forward, any changes on this branch can be pushed up using:
 git push
 ```
+
+### handling merge/rebase conflicts
+
+merge conflicts occurs when
+
+- [ ] todo: finish
