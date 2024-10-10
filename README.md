@@ -124,6 +124,33 @@ branches, to combine previous or collaborative work.
 
 - [ ] todo: remote branches
 
+## visually
+
+```
+remote repository        |
+    release branch       |        (commits of the branch are merged remotely)
+                         |                     /
+                         |         [merge request is merged, effectively, `git merge`]
+                         |                   /
+    remote branch        |          (local git history is reflected remotely)
+                         |                 /          \
+local repository         |             git push      git pull
+    local branch         |               /              \
+        commited changes |        (state is added to git history)
+                         |             /                  \
+                         |        git commit           git reset --soft
+                         |           /                      \
+        staged changes   |   (set of changes is ready to for commit)
+                         |         /                          \
+                         |     git add                  git restore --staged
+                         |       /                              \
+        working changes  | [new change or files made to the repository] --- git restore --- [changes are deleted] - X
+                         |                 \
+                         |            [add file name to .gitignore]
+                         |                   \
+        ignored changes  |                    (file is ignored by git)
+```
+
 ## commands
 
 ### working with local repositories
