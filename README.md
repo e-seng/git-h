@@ -44,12 +44,12 @@ all code starts as "working changes". this effectively means that
 
 ### working with local repositories
 
-`git init`
+##### `git init`
 
 - create a new local repository in the current working directory
 - this will be named whatever the working directory is named
 
-`git status`
+##### `git status`
 
 - double check the status of all files, except ignored files
 - this will identify which files are not being captured by `git`, or which files
@@ -84,7 +84,7 @@ for example:
 $ git add README.md main.c
 ```
 
-`git commit`
+##### `git commit`
 
 - commit staged files
 - this will typically open a text editor to write a _commit message_,
@@ -131,7 +131,7 @@ $ git commit -m "Add files to repository"
 >   - probably the worst of all
 >   - no details about what changed are specified
 
-`git branch`
+##### `git branch`
 
 - lists the branches that exist on the local repository
 - `-d <BRANCH NAME>` will delete an existing branch
@@ -158,7 +158,7 @@ $ git merge main
 
 commands here typically affect the committed changes on the repository
 
-`git fetch`
+##### `git fetch`
 
 - checks for any updates made to the remote repository not found within the
   local repository
@@ -167,7 +167,7 @@ commands here typically affect the committed changes on the repository
 - determine if any new remote branches were created
 - any new branches found can be checked-into using `git checkout` (see above)
 
-`git pull`
+##### `git pull`
 
 - pull all updates from the remote repository
 - will perform `git fetch` implicitly
@@ -175,7 +175,7 @@ commands here typically affect the committed changes on the repository
   merged/rebased into the working branch
   - this is more-so etiquette to improve the code review process
 
-`git push`
+##### `git push`
 
 - copies any new local commits to the remote repository if that commit is not
   already present
