@@ -57,7 +57,7 @@ all code starts as "working changes". this effectively means that
 - generally, this command is probably the most useful to see what needs to be
   updated
 
-`git checkout <BRANCH NAME>`
+##### `git checkout <BRANCH NAME>`
 
 - switches which branch you're working on
 - `-b <BRANCH NAME>` can be used to create a new branch with the specified name
@@ -136,7 +136,7 @@ $ git commit -m "Add files to repository"
 - lists the branches that exist on the local repository
 - `-d <BRANCH NAME>` will delete an existing branch
 
-`git merge <BRANCH NAME>`
+##### `git merge <BRANCH NAME>`
 
 - merges the specified branch into the current branch
 - this may lead to _merge conflicts_ if the two branches has commit changes
